@@ -56,6 +56,7 @@ This project analyzes Amazon India sales data using Microsoft Power BI. The dash
 | Total Profit | ₹33.17 Million |
 | Total Orders | 10,000 |
 | Total Units Sold | 25,000 |
+| Average Order Value | ₹15.58K |
 | Profit Margin | 21.29% |
 | Return Rate | 4.85% |
 | Cancellation Rate | 5.00% |
@@ -89,6 +90,24 @@ DIVIDE(
     0
 )
 ```
+
+## Key Business Findings
+
+1. The business generated ₹155.79 million in total sales and ₹33.17 million in total profit, achieving a profit margin of 21.29%.
+
+2. Electronics & Mobiles is the leading category in sales, profit and units sold.
+
+3. Laptop Backpack, Power Bank 20000mAh, 5G Smartphone, Wireless Earbuds and Smartwatch are the top-performing products by sales.
+
+4. Out of 10,000 orders, 81.47% were delivered, 5% were cancelled and 4.85% were returned.
+
+## Business Recommendations
+
+1. Maintain sufficient inventory for top-performing products to support customer demand and improve sales opportunities.
+
+2. Investigate cancellation patterns, particularly in Apparel & Fashion, and improve order confirmation and fulfilment processes.
+
+3. Analyze return patterns, especially in Electronics & Mobiles, to identify opportunities to improve product quality and customer satisfaction.
 
 ## Project Files
 
