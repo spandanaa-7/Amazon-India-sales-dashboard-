@@ -1,186 +1,101 @@
-\# Amazon India Sales Dashboard
+# Amazon India Sales Dashboard
 
-
-
-\## Project Overview
+## Project Overview
 
 This project analyzes Amazon India sales data using Microsoft Power BI. The dashboard provides insights into sales performance, profitability, order status, payment methods, fulfilment methods, and geographical performance.
 
+## Tools Used
 
+- Microsoft Power BI
+- Microsoft Excel
+- DAX (Data Analysis Expressions)
 
-\## Tools Used
+## Dataset
 
-\- Microsoft Power BI
+- Total Records: 10,000
+- Total Columns: 13
+- Dataset: Amazon Sales Data India
 
-\- Microsoft Excel
+## Dashboard Pages
 
-\- DAX (Data Analysis Expressions)
+### 1. Sales Overview
 
+- Total Sales
+- Total Profit
+- Total Orders
+- Total Units Sold
+- Average Order Value
+- Profit Margin
+- Monthly Sales and Profit Trends
+- Category-wise Sales and Profit
+- Top 10 Products by Sales
 
+### 2. Order and Returns Analysis
 
-\## Dataset
+- Order Status Distribution
+- Return Rate
+- Cancellation Rate
+- Category-wise Returns and Cancellations
 
-\- Total Records: 10,000
+### 3. Payment and Fulfilment Performance
 
-\- Total Columns: 13
+- Sales and Profit by Payment Method
+- Sales and Profit by Fulfilment Method
 
-\- Dataset: Amazon Sales Data India
+### 4. Geographical Performance
 
+- State-wise Sales
+- State-wise Profit
+- State-wise Orders
 
-
-\## Dashboard Pages
-
-
-
-\### 1. Sales Overview
-
-\- Total Sales
-
-\- Total Profit
-
-\- Total Orders
-
-\- Total Units Sold
-
-\- Average Order Value
-
-\- Profit Margin
-
-\- Monthly Sales and Profit Trends
-
-\- Category-wise Sales and Profit
-
-\- Top 10 Products by Sales
-
-
-
-\### 2. Order and Returns Analysis
-
-\- Order Status Distribution
-
-\- Return Rate
-
-\- Cancellation Rate
-
-\- Category-wise Returns and Cancellations
-
-
-
-\### 3. Payment and Fulfilment Performance
-
-\- Sales and Profit by Payment Method
-
-\- Sales and Profit by Fulfilment Method
-
-
-
-\### 4. Geographical Performance
-
-\- State-wise Sales
-
-\- State-wise Profit
-
-\- State-wise Orders
-
-
-
-\## Key Performance Indicators
-
-
+## Key Performance Indicators
 
 | KPI | Result |
-
 |---|---:|
-
 | Total Sales | ₹155.79 Million |
-
 | Total Profit | ₹33.17 Million |
-
 | Total Orders | 10,000 |
-
 | Total Units Sold | 25,000 |
-
 | Profit Margin | 21.29% |
-
 | Return Rate | 4.85% |
-
 | Cancellation Rate | 5.00% |
 
-
-
-\## DAX Measures
-
-
+## DAX Measures
 
 ```dax
+Total Sales = SUM('Sheet1'[Total_Sales_INR])
 
-Total Sales = SUM('Sheet1'\[Total\_Sales\_INR])
+Total Profit = SUM('Sheet1'[Profit_INR])
 
+Total Orders = DISTINCTCOUNT('Sheet1'[Order_ID])
 
+Total Units Sold = SUM('Sheet1'[Quantity])
 
-Total Profit = SUM('Sheet1'\[Profit\_INR])
+Average Order Value = DIVIDE([Total Sales], [Total Orders], 0)
 
-
-
-Total Orders = DISTINCTCOUNT('Sheet1'\[Order\_ID])
-
-
-
-Total Units Sold = SUM('Sheet1'\[Quantity])
-
-
-
-Average Order Value = DIVIDE(\[Total Sales], \[Total Orders], 0)
-
-
-
-Profit Margin % = DIVIDE(\[Total Profit], \[Total Sales], 0)
-
-
+Profit Margin % = DIVIDE([Total Profit], [Total Sales], 0)
 
 Return Rate % =
-
 DIVIDE(
-
-&#x20;   CALCULATE(\[Total Orders], 'Sheet1'\[Order\_Status] = "Returned"),
-
-&#x20;   \[Total Orders],
-
-&#x20;   0
-
+    CALCULATE([Total Orders], 'Sheet1'[Order_Status] = "Returned"),
+    [Total Orders],
+    0
 )
-
-
 
 Cancellation Rate % =
-
 DIVIDE(
-
-&#x20;   CALCULATE(\[Total Orders], 'Sheet1'\[Order\_Status] = "Cancelled"),
-
-&#x20;   \[Total Orders],
-
-&#x20;   0
-
+    CALCULATE([Total Orders], 'Sheet1'[Order_Status] = "Cancelled"),
+    [Total Orders],
+    0
 )
-
 ```
 
+## Project Files
 
+- `data/` – Original sales dataset
+- `dashboard/` – Power BI dashboard file
+- `screenshots/` – Dashboard screenshots and PDF export
 
-\## Project Files
-
-\- `data/` – Original sales dataset
-
-\- `dashboard/` – Power BI dashboard file
-
-\- `screenshots/` – Dashboard screenshots and PDF export
-
-
-
-\## Conclusion
+## Conclusion
 
 This project helped me understand retail sales data, create meaningful KPIs, analyze business performance, and build an interactive dashboard using Power BI.
-
-
-
